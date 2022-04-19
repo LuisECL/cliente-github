@@ -1,6 +1,6 @@
 import 'bootstrap/js/dist/collapse';
 
-function NavBar() {
+function NavBar({ menu }) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -25,18 +25,13 @@ function NavBar() {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a href="" className="nav-link">Página inicial</a>
-            </li>
-            <li className="nav-item">
-              <a href="" className="nav-link">Perfil pessoal</a>
-            </li>
-            <li className="nav-item">
-              <a href="" className="nav-link">Repositórios</a>
-            </li>
-            <li className="nav-item">
-              <a href="" className="nav-link">Busca</a>
-            </li>
+            {menu.map(item => {
+              return (
+                <li className="nav-item" key={item.id}>
+                  <a href={item.caminho} className="nav-link">{item.titulo}</a>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </div>
