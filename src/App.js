@@ -1,9 +1,10 @@
 // const logo = require('./logo.svg');
+import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import NavBar from './components/NavBar'
-import Perfil from './Pages/Perfil';
+import Roteador from './routes';
 
 function App() {
   const caminhos = [
@@ -30,10 +31,10 @@ function App() {
   ]
 
   return (
-    <div >
+    <BrowserRouter >
       <NavBar menu={caminhos}  />
-      <Perfil />
-    </div>
+      <Roteador/>
+    </BrowserRouter>
   );
 }
 
